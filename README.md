@@ -21,15 +21,15 @@ A simple Windows Forms tool for generating Frida hook scripts from Unity (il2cpp
 ## Example
 
 If your dump has:
-RVA: 0x3736B00
+RVA: 0x1234568
 public static int get_TeamPoint() { }
 
-RVA: 0x3736B6C
+RVA: 0x1234567
 public static void set_TeamPoint(int value) { }
 
 Use:
-- RVA SETTER: `0x3736B6C`
-- RVA GETTER: `0x3736B00`
+- RVA SETTER: `0x1234567`
+- RVA GETTER: `0x1234568`
 - Value: `9999`
 
 ## License
