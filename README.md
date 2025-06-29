@@ -1,2 +1,40 @@
 # RVA2FRIDA
-Small JavaScript generator for use with Frida
+
+A simple Windows Forms tool for generating Frida hook scripts from Unity (il2cpp) RVA addresses.
+
+## Features
+
+- Enter RVA of setter/getter methods from Unity dump
+- Set a value to force via Frida
+- Instantly get a ready-to-use Frida script for patching
+
+## How to use
+
+1. Get RVA values for the setter and getter from your Unity dump (look for `RVA: 0x...` lines).
+2. Enter the setter RVA in the "RVA SETTER" field.
+3. Enter the getter RVA in the "RVA GETTER" field.
+4. Enter the value you want to force (as integer).
+5. Click "Generate".
+6. Copy the script from the right and use it in your Frida session.
+
+## Example
+
+If your dump has:
+RVA: 0x3736B00
+public static int get_TeamPoint() { }
+
+RVA: 0x3736B6C
+public static void set_TeamPoint(int value) { }
+
+Use:
+- RVA SETTER: `0x3736B6C`
+- RVA GETTER: `0x3736B00`
+- Value: `9999`
+
+## License
+
+See [LICENSE](LICENSE).
+
+## Author
+
+- Ratmirage (https://github.com/Ratmirage)
